@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Belanja sayur",
+    "amount": 50000,
+    "type": "expense",
+    "balance": 0
+  },
+  {
+    "name": "Hasil Jualan sayur lodeh",
+    "amount": 100000,
+    "type": "income",
+    "balance": 100000
+  }
+]
