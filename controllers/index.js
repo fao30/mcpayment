@@ -3,15 +3,15 @@ const { Payment } = require("../models");
 
 class Controller {
   static async PaymentList(req, res, next) {
-    try {
-      console.log(req);
-      let response = await Payment.findAll({ order: [["createdAt", "ASC"]] });
-      if (response) {
-        res.status(200).json(response);
-      }
-    } catch (err) {
-      next(err);
-    }
+    // try {
+    //   console.log(req);
+    //   let response = await Payment.findAll({ order: [["createdAt", "ASC"]] });
+    //   if (response) {
+    //     res.status(200).json(response);
+    //   }
+    // } catch (err) {
+    //   next(err);
+    // }
   }
   static async addPayment(req, res, next) {
     try {
