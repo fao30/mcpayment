@@ -1,7 +1,5 @@
 # mcpayment
 
-# Rakamin
-
 ## API Reference
 
 ## List of APIs
