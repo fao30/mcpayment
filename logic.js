@@ -16,3 +16,15 @@ function logic(nums, target) {
     }
   }
 }
+
+let nums = [2, 7, 11, 15];
+let target = 13;
+console.log(logic(nums, target));
+
+let nums1 = [3, 2, 4];
+let target1 = 6;
+console.log(logic(nums1, target1));
+
+let nums2 = [3, 3];
+let target2 = 6;
+console.log(logic(nums2, target2));
