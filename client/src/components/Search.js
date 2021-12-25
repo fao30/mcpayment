@@ -28,6 +28,10 @@ export default function Home() {
       transactionType: search.transactionType,
     });
     dispatch(addPayment(payload));
+    setSearch({
+      transactionName: "",
+      transactionAmount: 0,
+    });
   };
 
   return (
@@ -42,6 +46,7 @@ export default function Home() {
             className="form-control"
             name="transactionName"
             onChange={changeListInput}
+            value={search.transactionName}
             placeholder="Name"
             aria-label="Name"
           />
@@ -52,6 +57,7 @@ export default function Home() {
             className="form-control"
             name="transactionAmount"
             onChange={changeListInput}
+            value={search.transactionAmount}
             placeholder="Amount"
             aria-label="Amount"
           />
