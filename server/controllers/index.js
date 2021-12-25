@@ -15,27 +15,27 @@ class Controller {
   }
   static async addPayment(req, res, next) {
     try {
-      if (req.body.type == "income") {
+      if (req.body.transactionType == "income") {
         let lastBalance = await Payment.findAll({
           order: [["createdAt", "DESC"]],
         });
-        let balance = lastBalance[0].balance + +req.body.amount;
+        let balance = lastBalance[0].balance + +req.body.transactionAmount;
         let response = await Payment.create({
-          name: req.body.name,
-          amount: req.body.amount,
-          type: req.body.type,
+          name: req.body.transactionName,
+          amount: +req.body.transactionAmount,
+          type: req.body.transactionType,
           balance: balance,
         });
         res.status(200).json(response);
-      } else if (req.body.type == "expense") {
+      } else if (req.body.transactionType == "expense") {
         let lastBalance = await Payment.findAll({
           order: [["createdAt", "DESC"]],
         });
-        let balance = lastBalance[0].balance - +req.body.amount;
+        let balance = lastBalance[0].balance - +req.body.transactionAmount;
         let response = await Payment.create({
-          name: req.body.name,
-          amount: req.body.amount,
-          type: req.body.type,
+          name: req.body.transactionName,
+          amount: +req.body.transactionAmount,
+          type: req.body.transactionType,
           balance: balance,
         });
         res.status(200).json(response);
